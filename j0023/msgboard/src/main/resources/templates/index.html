@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewpoint" content="width=device-width,initial-scale=1"/>
+    <title>留言板</title>
+    <link href="/msgboard/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" type="text/css" href="/msgboard/css/msgboard.css"/>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="page-header">
+        <h1>留言板</h1>
+        <h1><small>尽情留言吧！</small></h1>
+    </div>
+    <form>
+        <div class="form-group" id="sender-group">
+            <label for="sender">姓名</label>
+            <input type="text" class="form-control" id="sender" placeholder="请输入您的名字"/>
+            <span id="sender-err1" class="help-block" style="display: none">姓名不能为空</span>
+            <span id="sender-err2" class="help-block" style="display: none">姓名不能超过20字</span>
+        </div>
+        <div class="form-group" id="content-group">
+            <label for="content">内容</label>
+            <textarea class="form-control" rows="3" id="content" placeholder="请控制在500字以内"></textarea>
+            <span id="content-err1" class="help-block" style="display: none">内容不能为空</span>
+            <span id="content-err2" class="help-block" style="display: none">内容不能超过500字</span>
+        </div>
+        <button type="button" class="btn btn-default" id="submit-btn">提交</button>
+    </form>
+    <div class="alert alert-danger top-margin-15" role="alert" id="submit-error-area" style="display: none">
+        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        <span id="submit-error-msg"></span>
+    </div>
+    <div class="page-header">
+        <h3 id="pos" name="pos">历史留言</h3>
+    </div>
+    <div class="alert alert-danger top-margin-15" role="alert" id="list-error-area" style="display: none">
+        <span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        <span id="list-error-msg"></span>
+    </div>
+    <nav aria-label="Page navigation">
+        <ul class="pagination" id="page-ul">
+        </ul>
+    </nav>
+    <div id="msgdiv">
+    </div>
+</div>
+</body>
+<script src="/msgboard/js/jquery-3.2.1.js"></script>
+<script src="/msgboard/js/bootstrap.js"></script>
+<script src="/msgboard/js/msgboard.js"></script>
+</html>
